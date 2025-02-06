@@ -8,16 +8,16 @@ export default function Home() {
   const [meteo, setMeteo] = useState(null);
   const [error, setError] = useState(null);
 
-  // On utilise useEffect pour récupérer les données météo a chaque chargement de la page
+  // On utilise useEffect pour récupérer les données météo une seul fois au chargement de la page
   useEffect(() => {
     async function loadMeteo() {
       try {
         // data = données récupérées de l'API et on les met dans le state meteo
-        const data = await getMeteoData(conf.ville);
+        const data = await getMeteoData(conf.ville); // on passe l'argument conf.ville à la fonction getMeteoData(ville)
         setMeteo(data);
         // on initialise l'erreur à null par default
         setError(null);
-      } catch (err) {
+      } catch (error) {
         // Si il y a une erreur on met le message d'erreur dans le state error
         setError("Impossible de charger la météo");
       }
