@@ -23,7 +23,7 @@ export async function getMeteoData(ville) {
       temperature: Math.round(current.main.temp), // On arrondit la température à l'int le plus proche
       description: current.weather[0].description, // On récupère la description de la meteo
       humidity: current.main.humidity, // on récupère l'humidité
-      windSpeed: Math.round(current.wind.speed), // on récupère la vitesse du vent
+      windSpeed: Math.round(current.wind.speed * 3.6), // on récupère la vitesse du vent, 1 m/s = 3.6 km/h
       icon: current.weather[0].icon, // on récupère l'icône de la meteo, [0] = premier élément du tableau qui contient les données météo
     };
   } catch (error) {
