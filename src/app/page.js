@@ -12,7 +12,7 @@ export default function Home() {
   useEffect(() => {
     async function loadMeteo() {
       try {
-        // data = données récupérées de l'API et on les met dans le state meteo
+        // On attend que la fonction getMeteoData(conf.ville) retourne les données météo avant d'aller plus loin
         const data = await getMeteoData(conf.ville); // on passe l'argument conf.ville à la fonction getMeteoData(ville)
         setMeteo(data);
         // on initialise l'erreur à null par default
