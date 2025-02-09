@@ -58,7 +58,7 @@ export default function Home() {
               <div className="text-5xl font-bold text-gray-800">
                 {meteo.temperature}°C
               </div>
-              <div className="text-xl text-gray-600  mt-2">
+              <div className="text-xl text-gray-600  capitalize mt-2">
                 {meteo.description}
               </div>
             </div>
